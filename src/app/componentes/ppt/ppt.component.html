@@ -1,0 +1,50 @@
+<p>ppt works!</p>
+
+<div class="contat" *ngIf="pantallaFinal">
+  <div class="ro">
+    <div class="col">
+      <h3>{{this.mensajeFinal}}</h3>
+      <button type="button" class="btn btn-info" (click)="volverJugar()">Volver a jugar</button>
+    </div>
+  </div>
+</div>
+
+<div class="contat" *ngIf="this.pantallaJugador">
+  <div class="ro">
+    <div class="col">
+      <h3>turno jugador</h3>
+      <div class="btn-group btn-group-justified">
+        <button class="btn btn-primary" (click)="this.jugadorPiedra()">piedra</button>
+        <button class="btn btn-secondary" (click)="this.jugadorPapel()">papel</button>
+        <button class="btn btn-success" (click)="this.jugadorTijera()">tijera</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="contat" *ngIf="this.pantallaMaquina">
+    <div class="ro">
+      <div class="col">
+        <h3>Jugada maquina</h3>
+        <p *ngIf="maquinaSeleccion == 1">Maquina jugo: piedra</p>
+        <p *ngIf="maquinaSeleccion == 2">Maquina jugo: papel</p>
+        <p *ngIf="maquinaSeleccion == 3">Maquina jugo: tijera</p>
+        <!--div class="btn-group btn-group-justified">
+          <p>numero random: {{numerorandom}}</p>
+          <button class="btn btn-secondary" (click)="this.maquinaPiedra()">piedra</button>
+          <button class="btn btn-success" (click)="this.maquinaPapel()">papel</button>
+          <button class="btn btn-primary" (click)="this.maquinaTijera()">tijera</button>
+        </div-->
+      </div>
+    </div>
+  </div>
+  <hr/>
+  <div class="contat">
+    <div class="ro">
+      <div class="col">
+        <h3>resultados</h3>
+        <label>{{this.mensajeResultado}}</label>
+        <p>jugador: {{this.jugadorPuntaje}}</p><p>maquina: {{this.maquinaPuntaje}}</p>
+      </div>
+    </div>
+  </div>

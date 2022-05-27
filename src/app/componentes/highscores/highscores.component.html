@@ -1,0 +1,22 @@
+<html>
+  <body>
+    <h1>highscores works!</h1>
+    <table border = "1">
+      <tr>
+        <th>Nombre</th>
+        <th>Juego</th>
+        <th>Puntaje</th>
+        <th>Fecha</th>
+      </tr>
+
+      <!--li *ngFor="let players of this.jugadores"-->
+        <tr *ngFor="let players of this.jugadores">
+          <td>{{ players.nombre }}</td>
+          <td>{{ players.nombreJuego }}</td>
+          <td>{{ players.puntaje }}</td>
+          <td>{{ players.fecha }}</td>
+        </tr>
+      <!--/li-->
+    </table>
+  </body>
+</html>

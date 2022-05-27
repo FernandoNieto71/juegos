@@ -1,0 +1,70 @@
+
+.center {
+    text-align: center;
+    border: 1px solid green;
+    }
+
+.grid-juegos{
+    /*display: grid;
+    grid-template-columns: repeat(2,1fr);
+    justify-content: space-around;*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+
+}
+
+.grid-uno{
+    grid-column: 1;
+    /*grid-row: minmax(80px, 100px);
+    grid-template-rows: minmax(80px, 100px);*/
+}
+
+.grid-dos{
+    grid-column: 2;
+   /* grid-row: 1;*/
+    
+}
+
+.grid-tres{
+    grid-column: 3;
+    /*grid-row: 1;*/
+    
+}
+
+.btnuno{
+    background-image: url("/assets/tateti.png");
+    width: 310px;
+    height: 310px;
+    
+}
+
+.btndos{
+    background-image: url("/assets/ppt.png");
+    width: 330px;
+    height: 310px;
+    size-adjust: 80%;
+}
+
+.btntres{
+    background-image: url("/assets/adivina.png");
+    width: 320px;
+    height: 310px;
+    size-adjust: 80%;
+}
+
+
+
+.fondoJuegos{
+    background-color: bisque;
+    align-items: center;
+}
+
+.grid-abajo{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 200px 200px;
+    grid-gap:20px;
+}
+
