@@ -26,13 +26,13 @@ export class Jugadores {
   }
 
   guardaScore(): void {
-    window.alert('aca entro');
+    //window.alert('aca entro');
     var scoreJugador = [];
     if (localStorage.getItem('scoreJugador') == null) {
-      window.alert('verdadero'); //si queres saca la alerta despues de probar como funciona
+      //window.alert('verdadero'); //si queres saca la alerta despues de probar como funciona
       scoreJugador = [];
     } else {
-      window.alert('sino');
+      //window.alert('sino');
       scoreJugador = JSON.parse(localStorage.getItem('scoreJugador'));
     }
     scoreJugador.push({

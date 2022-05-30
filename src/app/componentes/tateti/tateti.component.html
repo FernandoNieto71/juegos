@@ -1,1 +1,24 @@
-<p>tateti works!</p>
+<header><h1>Ta Te Ti</h1></header>
+
+    <section id="ficha">
+        <h3>Elige ficha:</h3><a onclick="eligeFicha('X')">X</a><a onclick="eligeFicha('O')">O</a>
+    </section>
+
+    <section id="jugadores">
+    <div id="comp"></div><div id="hum"></div>
+    </section>
+
+    <section id="turno"></section>
+
+    <section id="tablero">
+        
+
+        <a class="celda" id="ceroCero" onclick="jugadaHumano(this, 0, 0)"></a><div class="celda" id="ceroUno" onclick="jugadaHumano(this, 0, 1)"></div><div class="celda" id="ceroDos" onclick="jugadaHumano(this, 0, 2)"></div><div class="celda" id="unoCero" onclick="jugadaHumano(this, 1, 0)"></div><div class="celda" id="unoUno" onclick="jugadaHumano(this, 1, 1)"></div><div class="celda" id="unoDos" onclick="jugadaHumano(this, 1, 2)"></div><div class="celda" id="dosCero" onclick="jugadaHumano(this, 2, 0)"></div><div class="celda" id="dosUno" onclick="jugadaHumano(this, 2, 1)"></div><div class="celda" id="dosDos" onclick="jugadaHumano(this, 2, 2)"></div>
+
+    </section>
+    
+    <section class="marcador">
+        <section id="ganadosH"></section>
+        <section id="ganadosC"></section>
+        <section id="empate"></section>
+    </section>

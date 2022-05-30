@@ -27,14 +27,16 @@ selectojuego(numero:number):void{
     }
     case 2:{
       this.jugado = 2;
+      //this.valorAPasar={nombre: this.jugadorActual.nombre, mail: this.jugadorActual.mail, juego: '3'};
       break;
     }
     case 3:{
       this.jugado = 3;
-      this.valorAPasar={nombre: this.jugadorActual.nombre, mail: this.jugadorActual.mail, juego: '3'};
+      //this.valorAPasar={nombre: this.jugadorActual.nombre, mail: this.jugadorActual.mail, juego: '3'};
       break;
     }
   }
+  this.valorAPasar={nombre: this.jugadorActual.nombre, mail: this.jugadorActual.mail, juego: this.jugado};
 }
 
 

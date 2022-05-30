@@ -45,7 +45,7 @@
       <app-tateti></app-tateti>
     </div>
     <div *ngIf="this.jugado == 2">
-      <app-ppt></app-ppt>
+      <app-ppt [datosAPasarPPT]="valorAPasar"></app-ppt>
     </div>
     <div *ngIf="this.jugado == 3">
       <app-adivina [datosAPasar]="valorAPasar"></app-adivina>

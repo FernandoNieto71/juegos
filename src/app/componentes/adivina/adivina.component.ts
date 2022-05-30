@@ -45,7 +45,7 @@ export class AdivinaComponent implements OnInit {
     }
     this.vector.push(a);
     if (this.aleatorio == this.numero) {
-      window.alert('adivino, muy bien');
+      //window.alert('adivino, muy bien');
       //this.leyenda = "Has adivinado!!!";
       this.igualNum = true;
       //this.jugador.miUsuario=JSON.parse(localStorage.getItem('users'));

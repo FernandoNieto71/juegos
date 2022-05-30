@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input,  OnInit } from '@angular/core';
+import { Jugadores } from 'src/app/clases/jugadores';
 
 @Component({
   selector: 'app-ppt',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ppt.component.css'],
 })
 export class PptComponent implements OnInit {
+  @Input() datosAPasarPPT: any;
+
   pantallaJugador: boolean;
   pantallaMaquina:boolean;
   jugadorSeleccion: number;
@@ -16,6 +19,7 @@ export class PptComponent implements OnInit {
   mensajeFinal: string;
   pantallaFinal: boolean;
   numerorandom: any;
+  jugadornuevo: Jugadores;
 
   constructor() {
     this.pantallaJugador = true;
@@ -25,7 +29,8 @@ export class PptComponent implements OnInit {
     this.maquinaPuntaje = 0;
     this.jugadorPuntaje = 0;
     this.mensajeFinal = '';
-    //this.numerorandom= Math.floor(Math.random() * 3) +1;
+    this.jugadornuevo = new Jugadores();
+    
   }
 
   ngOnInit(): void {}
@@ -53,23 +58,7 @@ export class PptComponent implements OnInit {
     this.verificaJugada();
   }
 
-  /*
-  maquinaPiedra(): void {
-    //this.pantalla = true;
-    this.maquinaSeleccion = 1;
-    this.verificaJugada();
-  }
-  maquinaPapel(): void {
-    //this.pantalla = true;
-    this.maquinaSeleccion = 2;
-    this.verificaJugada();
-  }
-
-  maquinaTijera(): void {
-    //this.pantalla = true;
-    this.maquinaSeleccion = 3;
-    this.verificaJugada();
-  }*/
+  
 
   verificaJugada(): void {
     if (this.maquinaSeleccion == this.jugadorSeleccion) {
@@ -117,12 +106,14 @@ export class PptComponent implements OnInit {
       this.pantallaJugador = false;
       this.pantallaMaquina= false;
       this.pantallaFinal =  true;
+      this.grabascore();
     }
     if (this.maquinaPuntaje == 3) {
       this.mensajeFinal = 'Gano la maquina';
       this.pantallaJugador = false;
       this.pantallaMaquina = false;
       this.pantallaFinal =  true;
+
     }
   }
 
@@ -132,4 +123,41 @@ export class PptComponent implements OnInit {
     this.pantallaFinal = false;
     this.pantallaJugador = true;
   }
+
+  grabascore():void{
+    let dato: string;
+    dato = this.datosAPasarPPT.nombre;
+   //dato= 'sin dato';
+    this.jugadornuevo.setNombre(dato);
+    dato = this.datosAPasarPPT.mail;
+    //dato= 'sin dato';
+    this.jugadornuevo.setMail(dato);
+    //this.jugadornuevo.juego = this.datosAPasar.juego;
+    this.jugadornuevo.juego = 2;
+    this.jugadornuevo.setNombrejuego('PPT');
+    this.jugadornuevo.puntaje = this.jugadorPuntaje-this.maquinaPuntaje;
+    var fecha = new Date();
+    this.jugadornuevo.fechaHora = fecha.toLocaleDateString();
+    this.jugadornuevo.guardaScore();
+  }
+
+
+  /*
+  maquinaPiedra(): void {
+    //this.pantalla = true;
+    this.maquinaSeleccion = 1;
+    this.verificaJugada();
+  }
+  maquinaPapel(): void {
+    //this.pantalla = true;
+    this.maquinaSeleccion = 2;
+    this.verificaJugada();
+  }
+
+  maquinaTijera(): void {
+    //this.pantalla = true;
+    this.maquinaSeleccion = 3;
+    this.verificaJugada();
+  }*/
+
 }
