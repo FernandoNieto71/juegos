@@ -45,23 +45,25 @@ export class AdivinaComponent implements OnInit {
     }
     this.vector.push(a);
     if (this.aleatorio == this.numero) {
-      //window.alert('adivino, muy bien');
-      //this.leyenda = "Has adivinado!!!";
-      this.igualNum = true;
-      //this.jugador.miUsuario=JSON.parse(localStorage.getItem('users'));
-      let dato: string;
-      //dato=this.jugadorActual.nombre;
-      dato = this.datosAPasar.nombre;
-      this.jugadornuevo.setNombre(dato);
-      //dato=this.jugadornuevo.mail;
-      dato = this.datosAPasar.mail;
-      this.jugadornuevo.setMail(dato);
-      this.jugadornuevo.juego = this.datosAPasar.juego;
-      this.jugadornuevo.setNombrejuego('Adivina');
-      this.jugadornuevo.puntaje = this.contador;
-      var fecha = new Date();
-      this.jugadornuevo.fechaHora = fecha.toLocaleDateString();
-      this.jugadornuevo.guardaScore();
+      if (4 - this.contador > 0) {
+        //window.alert('adivino, muy bien');
+        //this.leyenda = "Has adivinado!!!";
+        this.igualNum = true;
+        //this.jugador.miUsuario=JSON.parse(localStorage.getItem('users'));
+        let dato: string;
+        //dato=this.jugadorActual.nombre;
+        dato = this.datosAPasar.nombre;
+        this.jugadornuevo.setNombre(dato);
+        //dato=this.jugadornuevo.mail;
+        dato = this.datosAPasar.mail;
+        this.jugadornuevo.setMail(dato);
+        this.jugadornuevo.juego = this.datosAPasar.juego;
+        this.jugadornuevo.setNombrejuego('Adivina');
+        this.jugadornuevo.puntaje = 4 - this.contador;
+        var fecha = new Date();
+        this.jugadornuevo.fechaHora = fecha.toLocaleDateString();
+        this.jugadornuevo.guardaScore();
+      }
     } else {
       this.contador++;
       if (this.aleatorio > this.numero) {

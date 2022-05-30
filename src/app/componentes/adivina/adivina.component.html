@@ -6,6 +6,24 @@
       </svg>
 </div-->
 <!--buttom class="bi bi-arrow-clockwise (click)= contructor()">Inicio</buttom-->
+
+<!--div class="ro">
+  <div class="col">
+    <h3>turno jugador : {{ datosAPasarPPT.nombre }}</h3>
+    <div class="btn-group btn-group-justified">
+      <button class="btn btn-primary" (click)="this.jugadorPiedra()">
+        piedra
+      </button>
+      <button class="btn btn-secondary" (click)="this.jugadorPapel()">
+        papel
+      </button>
+      <button class="btn btn-success" (click)="this.jugadorTijera()">
+        tijera
+      </button>
+    </div>
+  </div>
+</div-->
+
 <div *ngIf="!this.salir">
   <div class="flex" *ngIf="!this.mostrarJugando">
     <p>jugador: {{ datosAPasar.nombre }}</p>
@@ -14,36 +32,49 @@
       Inicio
     </button>
 
-    <button class="bi bi-x-circle ml-5" (click)="this.salirJuego()">Salir</button>
+    <button class="bi bi-x-circle ml-5" (click)="this.salirJuego()">
+      Salir
+    </button>
   </div>
 
   <div *ngIf="this.mostrarJugando">
-    <div>
-      <p>Intento: {{ this.contador }}</p>
-      <table>
-        <tr>
-          <td *ngFor="let item of this.vector">
-            {{ item }}
-          </td>
-        </tr>
-      </table>
-    </div>
-    <div>
-      <!--label for="inputName" class="sr-only">Ingrese Numero</label-->
-      <label>Ingrese Numero: </label>
-      <input
-        name="probar"
-        type="number"
-        id="probar"
-        class="tamaniotext"
-        placeholder="Ingrese valor"
-        required
-        autofocus
-        [(ngModel)]="this.numero"
-      />
-      <br />
-      <button class="btn btn-primary btn-lg" (click)="probar()">Probar</button>
-
+    <div class="contat">
+      <div class="ro">
+        <div class="col">
+          <div>
+            <p>Intento: {{ this.contador }}</p>
+            <table>
+              <tr>
+                <td *ngFor="let item of this.vector">
+                  {{ item }}
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="contat">
+        <div class="ro">
+          <div class="col">
+            <!--label for="inputName" class="sr-only">Ingrese Numero</label-->
+            <label>Ingrese Numero: </label>
+            <input
+              name="probar"
+              type="number"
+              id="probar"
+              class="tamaniotext"
+              placeholder="Ingrese valor"
+              required
+              autofocus
+              [(ngModel)]="this.numero"
+            />
+            <br />
+            <button class="btn btn-primary btn-lg" (click)="probar()">
+              Probar
+            </button>
+          </div>
+        </div>
+      </div>
       <div *ngIf="this.contador > 1">
         <h3 *ngIf="this.igualNum && this.contador < 3">
           Has adivinado en pocos intentos!!!
@@ -62,6 +93,14 @@
         </h3>
       </div>
     </div>
-    <button class="bi bi-x-circle ml-5" (click)="this.salirJuego()">Salir</button>
+    <div class="contat">
+      <div class="ro">
+        <div class="col">
+          <button class="bi bi-x-circle ml-5" (click)="this.salirJuego()">
+            Salir
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
