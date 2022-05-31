@@ -48,8 +48,9 @@
                 <div class="col-lg-6">
                     <div class="about-text go-to">
                         <h3 class="dark-color">About Me</h3>
+                        <h4>{{ persona.nombre }}</h4>
                         <h6 class="theme-color lead">A HTML CSS PHP Angular diseñador con domiciolio en BA</h6>
-                        <p>Soy <mark>desarrollador</mark> especializado en backend. Mi pasion es desarrollar experiencias digitales para los usuarios.</p>
+                        <p>{{ persona.biogra }}. Mi pasion es desarrollar experiencias digitales para los usuarios.</p>
                         <div class="row about-list">
                             <div class="col-md-6">
                                 <div class="media">
@@ -93,7 +94,7 @@
                 <div class="col-lg-6">
                     <div class="about-avatar">
                         <!--img src="https://bootdey.com/img/Content/avatar/avatar7.png" title="" alt=""-->
-                         <img src="/assets/fnieto.jpg" title="" alt="">
+                         <img src= "{{ persona.avatar }}" title="" alt="">
                     </div>
                 </div>
             </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Github } from 'src/app/clases/github';
+import { PersonalService } from 'src/app/servicio/personal.service';
 
 @Component({
   selector: 'app-personal',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./personal.component.css']
 })
 export class PersonalComponent implements OnInit {
-
-  constructor() { }
+  persona:Github;
+  constructor(private miservicio: PersonalService) { }
 
   ngOnInit(): void {
+    this.cargaDatos();
+  }
+  
+  cargaDatos(){
+    this.miservicio.devuelve().subscribe(resp=>{
+      this.persona=new Github(resp)
+    })
+    
   }
 
 }

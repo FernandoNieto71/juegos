@@ -15,6 +15,7 @@ import { PptComponent } from './componentes/ppt/ppt.component';
 import { AdivinaComponent } from './componentes/adivina/adivina.component';
 import { HighscoresComponent } from './componentes/highscores/highscores.component';
 import { NavegadorComponent } from './componentes/navegador/navegador.component';
+import { HttpClientModule } from '@angular/common/http';
 //import { AdivinaComponent } from './componetes/adivina/adivina.component';
 //import { PersonalComponent } from './component/personal/personal.component';
 //import { FormsModule } from '@angular/forms';
@@ -39,7 +40,8 @@ import { NavegadorComponent } from './componentes/navegador/navegador.component'
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

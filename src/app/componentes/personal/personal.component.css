@@ -121,3 +121,7 @@ mark {
 .dark-color {
     color: #20247b;
 }
+
+.about-avatar img{
+  border-radius: 50%;
+}
