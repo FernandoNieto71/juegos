@@ -11,9 +11,16 @@ import { Router, NavigationEnd } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   miUsuario:Usuario;
+  existe:boolean;
+  leyendaNoExiste:string;
+  claveErronea:boolean;
   constructor(private router: Router) { 
-
+  
     this.miUsuario=new Usuario();
+    this.existe=false;
+    this.leyendaNoExiste='Ususario no existe';
+    this.claveErronea = false;
+
   }
 
   ngOnInit(): void {
@@ -48,15 +55,29 @@ mostrarDatos(): void
           break;
         }
         else{
-          window.alert("Acceso no Concedido");
+          //window.alert("Acceso no Concedido");
+          this.claveErronea = true;
         }
       }
     }
     if(!encontrado){
-      window.alert("Usuario no existe");
-      this.router.navigate(["registro"]);
+      //window.alert("Usuario no existe");
+      this.existe=true;
+
+      //this.router.navigate(["registro"]);
     }
 
+    
+
+  }
+
+  reIntentar():void{
+    this.existe= false;
+    this.claveErronea= false;
+  }
+
+  irRegistro():void{
+    this.router.navigate(["registro"]);
   }
 }
 
