@@ -17,7 +17,8 @@ export class AdivinaComponent implements OnInit {
   numero: number;
   vector: string[] = [];
   contador: number;
-  menorMayor: boolean;
+  Mayor: boolean;
+  Menor:boolean;
   igualNum: boolean;
   mostrarJugando: boolean;
   jugadornuevo: Jugadores;
@@ -28,7 +29,8 @@ export class AdivinaComponent implements OnInit {
     this.numero = 0;
     this.salir = false;
     this.contador = 1;
-    this.menorMayor = false;
+    this.Mayor = false;
+    this.Menor =  false;
     this.igualNum = false;
     this.mostrarJugando = false;
     this.jugadornuevo = new Jugadores();
@@ -38,17 +40,19 @@ export class AdivinaComponent implements OnInit {
   ngOnInit(): void {}
 
   probar(): any {
-    window.alert('aleatorio: ' + this.aleatorio + ', numero: ' + this.numero);
-    var a: string = String(this.numero);
+    //window.alert('aleatorio: ' + this.aleatorio + ', numero: ' + this.numero);
+    
     if (this.contador > 1) {
       this.vector.push(' - ');
     }
-    this.vector.push(a);
+    this.vector.push(String(this.numero));
     if (this.aleatorio == this.numero) {
       if (4 - this.contador > 0) {
         //window.alert('adivino, muy bien');
         //this.leyenda = "Has adivinado!!!";
         this.igualNum = true;
+        this.Menor = false;
+        this.Mayor = false;
         //this.jugador.miUsuario=JSON.parse(localStorage.getItem('users'));
         let dato: string;
         //dato=this.jugadorActual.nombre;
@@ -69,11 +73,13 @@ export class AdivinaComponent implements OnInit {
       if (this.aleatorio > this.numero) {
         //window.alert("numero menor");
         //this.leyenda = "El numero es menor al buscado";
-        this.menorMayor = true;
+        this.Menor = true;
+        this.Mayor = false;
       } else {
         //window.alert("numero mayor");
         //this.leyenda = "El numero es mayor al buscado";
-        this.menorMayor = false;
+        this.Mayor = true;
+        this.Menor = false;
       }
     }
   }

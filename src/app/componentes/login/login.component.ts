@@ -41,7 +41,7 @@ mostrarDatos(): void
       if(users[i]["mail"] == this.miUsuario.mail){
         encontrado = 1;
         if(users[i]["clave"] == this.miUsuario.clave){
-          window.alert("Bienvenido " + users[i]["nombre"]);
+          //window.alert("Bienvenido " + users[i]["nombre"]);
           this.miUsuario.guardaJugador();
           this.router.navigate(["juegos"]);
 

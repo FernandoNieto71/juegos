@@ -42,6 +42,7 @@
       <div class="ro">
         <div class="col">
           <div>
+            <p>{{this.aleatorio}}</p>
             <p>Intento: {{ this.contador }}</p>
             <table>
               <tr>
@@ -85,10 +86,10 @@
         <h3 *ngIf="this.igualNum && this.contador > 6">
           Has adivinado, pero te costo!!!
         </h3>
-        <h3 *ngIf="this.menorMayor && !this.igualNum">
+        <h3 *ngIf="this.Menor && !this.igualNum">
           El numero es menor al buscado
         </h3>
-        <h3 *ngIf="!this.menorMayor && !this.igualNum">
+        <h3 *ngIf="this.Mayor && !this.igualNum">
           El numero es mayor al buscado
         </h3>
       </div>
