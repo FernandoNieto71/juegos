@@ -1,24 +1,70 @@
-<header><h1>Ta Te Ti</h1></header>
-
-    <section id="ficha">
-        <h3>Elige ficha:</h3><a onclick="eligeFicha('X')">X</a><a onclick="eligeFicha('O')">O</a>
-    </section>
-
-    <section id="jugadores">
-    <div id="comp"></div><div id="hum"></div>
-    </section>
-
-    <section id="turno"></section>
-
-    <section id="tablero">
-        
-
-        <a class="celda" id="ceroCero" onclick="jugadaHumano(this, 0, 0)"></a><div class="celda" id="ceroUno" onclick="jugadaHumano(this, 0, 1)"></div><div class="celda" id="ceroDos" onclick="jugadaHumano(this, 0, 2)"></div><div class="celda" id="unoCero" onclick="jugadaHumano(this, 1, 0)"></div><div class="celda" id="unoUno" onclick="jugadaHumano(this, 1, 1)"></div><div class="celda" id="unoDos" onclick="jugadaHumano(this, 1, 2)"></div><div class="celda" id="dosCero" onclick="jugadaHumano(this, 2, 0)"></div><div class="celda" id="dosUno" onclick="jugadaHumano(this, 2, 1)"></div><div class="celda" id="dosDos" onclick="jugadaHumano(this, 2, 2)"></div>
-
-    </section>
-    
-    <section class="marcador">
-        <section id="ganadosH"></section>
-        <section id="ganadosC"></section>
-        <section id="empate"></section>
-    </section>
+<body class="fondo">
+  <header><h1>Ta Te Ti</h1></header>
+<div class="container" *ngIf="this.resultado">
+    <div class="row">
+        <div class="col">
+            <h2> {{ this.mensajefinal }}</h2>
+        </div>
+    </div>
+</div>
+  <div class="conteiner fondocuadro">
+    <div class="row altcuadro">
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(0, 0)" >
+          {{ posiciones[0][0] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(0, 1)" >
+          {{ posiciones[0][1] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(0, 2)" >
+          {{ posiciones[0][2] }}
+        </button>
+      </div>
+    </div>
+    <div class="row altcuadro">
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(1, 0)" >
+          {{ posiciones[1][0] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(1, 1)" >
+          {{ posiciones[1][1] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(1, 2)" >
+          {{ posiciones[1][2] }}
+        </button>
+      </div>
+    </div>
+    <div class="row altcuadro">
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(2, 0)" >
+          {{ posiciones[2][0] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(2, 1)" >
+          {{ posiciones[2][1] }}
+        </button>
+      </div>
+      <div class="col">
+        <button class="tamanioboton" (click)="presion(2, 2)" >
+          {{ posiciones[2][2] }}
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="conteiner fondocuadro">
+    <div style="text-align: center">
+      <button mat-button color="primary" (click)="reiniciar()">
+        Reiniciar
+      </button>
+    </div>
+  </div>
+</body>

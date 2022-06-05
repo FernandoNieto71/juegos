@@ -69,3 +69,33 @@ h1, h2, h3 {
     display: none;
     margin-left: 30px;
 }
+
+.fondo{
+    background-color:#3578b6;
+}
+
+.fondocuadro{
+    background-color: #3578b6;
+    border: solid;
+}
+
+.altcuadro{
+    height: 60px;
+	
+	margin: 30px auto;
+}
+
+.tamanioboton{
+    -webkit-border-radius: 4;
+    -moz-border-radius: 4;
+    border-radius: 4px;
+    text-shadow: 1px 1px 15px #666666;
+    font-family: Arial;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 30px 40px;
+    background: #88dd77;
+    border: solid #000000 1px;
+    text-decoration: none;
+    width: 90%;
+}

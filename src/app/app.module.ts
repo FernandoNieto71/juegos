@@ -20,6 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
 //import { PersonalComponent } from './component/personal/personal.component';
 //import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     AppComponent,
