@@ -30,6 +30,9 @@
             <li class="grid-tres">
               <button class="btntres" (click)="selectojuego(3)">Adivina</button>
             </li>
+            <li class="grid-cuatro">
+              <button class="btncuatro" (click)="selectojuego(4)">ahorcado</button>
+            </li>
           </div>
         </div>
       </div>
@@ -49,6 +52,9 @@
     </div>
     <div *ngIf="this.jugado == 3">
       <app-adivina [datosAPasar]="valorAPasar"></app-adivina>
+    </div>
+    <div *ngIf="this.jugado == 4">
+      <app-ahorcado [datosAPasarAhorcado]="valorAPasar"></app-ahorcado>
     </div>
   </div>
 </body>

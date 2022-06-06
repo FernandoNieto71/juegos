@@ -54,6 +54,13 @@
     size-adjust: 80%;
 }
 
+.btncuatro{
+    background-image: url("/assets/ahorcado.png");
+    width: 320px;
+    height: 310px;
+    size-adjust: 80%;
+}
+
 
 
 .fondoJuegos{

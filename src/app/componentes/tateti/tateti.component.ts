@@ -32,6 +32,7 @@ mensajefinal:string;
   }
 
   reiniciar() {
+    this.resultado=false;
     for(let f=0;f<3;f++)
       for(let c=0;c<3;c++)
         this.posiciones[f][c]='-';
