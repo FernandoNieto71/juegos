@@ -1,34 +1,65 @@
 <p>ahorcado works!</p>
 <body>
-    <h1>• AHORCADO • </h1>
-    <div class="row">
-      <div class="letra">
-        <div class="col-12">
+  <div class="contenedor" *ngIf="!salida">
+    <div>
+      <h1>• AHORCADO • {{this.palabraArmada }} - {{ this.palabraMatriz[this.aleatorio]}}</h1>
+      <div class="row">
+        <div class="letra">
+          <div class="col-12">
             &nbsp;
-            <span *ngFor="let esp of espacios ">
-                 <span *ngIf="contiene(esp)">
-                    {{esp}} &nbsp;
-                </span>
-                <span *ngIf="!contiene(esp)">
-                    _ &nbsp;
-                </span>
+            <span *ngFor="let esp of espacios">
+               
+              <span *ngIf="contiene(esp)"> {{ esp }} &nbsp; </span>
+              <span *ngIf="!contiene(esp)"> _ &nbsp; </span>
             </span>
+          </div>
+        </div>
+      </div>
+      <div class="pedidas">
+        <input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra" />
+      </div>
+      <div class="norepita">
+        {{ this.letrasElegidas }}
+      </div>
+      <div id="volver" *ngIf="ocultaBoton">
+        <div>
+          <button type="button" class="btn btn-info" (click)="volverJuego()">
+            Volver a jugar
+          </button>
+        </div>
+        <div id="inciobtn">
+          <button class="btn btn-primary" type="button" (click)="salir()">
+            Salir
+          </button>
         </div>
       </div>
     </div>
-    <div class="pedidas">
-      <input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra">
+    <div>
+      <li *ngIf="this.contador == 0">
+        <img src="./assets/foto0.png" />
+      </li>
+      <li *ngIf="this.contador == 1">
+        <img src="./assets/foto1.png" />
+      </li>
+      <li *ngIf="this.contador == 2">
+        <img src="./assets/foto2.png" />
+      </li>
+      <li *ngIf="this.contador == 3">
+        <img src="./assets/foto3.png" />
+      </li>
+      <li *ngIf="this.contador == 4">
+        <img src="./assets/foto4.png" />
+      </li>
+      <li *ngIf="this.contador == 5">
+        <img src="./assets/foto5.png" />
+      </li>
+      <li *ngIf="this.contador == 6">
+        <img src="./assets/foto6.png" />
+        <p>perdiste vuelve a intentarlo</p>
+      </li>
+      <li *ngIf="gano">
+          <p>ganaste!!!</p>
+      </li>
     </div>
-    <div class="norepita">
-      {{this.letrasElegidas}}
-    </div>
-    <div id="volver" *ngIf="ocultaBoton">
-      <div >
-      <button type="button" class="btn btn-info" >Volver a jugar</button>
-      </div>
-     <div id="inciobtn">
-      <button class="btn btn-primary" type="button" routerLink="../../inicio" >Salir</button>
-     </div>
-    </div>
-  </body>
-  
+  </div>
+</body>

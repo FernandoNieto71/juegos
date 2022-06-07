@@ -15,21 +15,68 @@ export class AhorcadoComponent implements OnInit {
   alfabeto: string;
   mostrarJuego = false;
   ocultaBoton = true;
+  palabraMatriz: string[];
+  aleatorio: number;
+  salida: boolean;
+  contador:number;
+  contadorEsta:number;
+  gano:boolean;
+  palabraArmada:string;
 
   constructor() {
     //this.miAhorcado = new Ahorcado();
-    this.palabra = 'soledad';
+    this.palabraMatriz = [
+      'abecedario',
+      'universidad',
+      'comitiva',
+      'aeronautica',
+      'profesor',
+      'alumno',
+      'hemisferio',
+      'cavernicola',
+      'material',
+      'capitolio',
+      'edificio',
+      'manteca',
+      'asador',
+      'automovil',
+      'menospreciar',
+      'atenuante',
+      'sumatoria',
+      'atornillado',
+      'ametralladora',
+      'patagonia',
+      'antartida',
+    ];
+    this.salida = false;
+    this.aleatorio = Math.floor(Math.random() * 20);
+    this.palabra = this.palabraMatriz[this.aleatorio];
     this.espacios = this.palabra.split('');
     this.alfabeto = 'ABCDEFGHIJKLMNÑOPQRSTUVWXYZ';
+    this.contador=0;
+    this.contadorEsta=0;
+    this.gano=false;
+    this.palabraArmada='';
   }
 
   ngOnInit(): void {}
 
   validar() {
+    if (!this.palabraMatriz[this.aleatorio].includes(this.letra)) {
+      this.contador++;
+    }
+    if (this.palabraMatriz[this.aleatorio].includes(this.letra)) {
+      this.contadorEsta++;
+    }
     if (/[a-zA-Z]$/.test(this.letra)) {
       this.letrasElegidas += ' - ' + this.letra;
+      this.palabraArmada += this.letra;
       this.letra = '';
+      
     }
+   this.verificaFinal();
+    
+    
   }
 
   contiene(pal: string): boolean {
@@ -52,5 +99,21 @@ export class AhorcadoComponent implements OnInit {
   menuJuego() {
     this.ocultaBoton = true;
     this.mostrarJuego = false;
+  }
+
+  volverJuego() {
+    this.aleatorio = Math.floor(Math.random() * 20);
+    this.palabra = this.palabraMatriz[this.aleatorio];
+    this.espacios = this.palabra.split('');
+    this.letrasElegidas = '';
+  }
+
+  salir() {
+    this.salida = true;
+  }
+
+  verificaFinal(){
+  if(this.palabraArmada == this.palabraMatriz[this.aleatorio])
+    this.gano= true;
   }
 }
