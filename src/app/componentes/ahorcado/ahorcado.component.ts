@@ -22,6 +22,7 @@ export class AhorcadoComponent implements OnInit {
   contadorEsta:number;
   gano:boolean;
   palabraArmada:string;
+  
 
   constructor() {
     //this.miAhorcado = new Ahorcado();
@@ -66,7 +67,13 @@ export class AhorcadoComponent implements OnInit {
       this.contador++;
     }
     if (this.palabraMatriz[this.aleatorio].includes(this.letra)) {
-      this.contadorEsta++;
+      for(var i=0;i<this.palabraMatriz[this.aleatorio].length;i++){
+        if(this.palabraMatriz[this.aleatorio][i]==this.letra){
+          this.contadorEsta++;
+        }
+      }
+      
+      
     }
     if (/[a-zA-Z]$/.test(this.letra)) {
       this.letrasElegidas += ' - ' + this.letra;
@@ -106,6 +113,8 @@ export class AhorcadoComponent implements OnInit {
     this.palabra = this.palabraMatriz[this.aleatorio];
     this.espacios = this.palabra.split('');
     this.letrasElegidas = '';
+    this.contador=0;
+    this.gano=false;
   }
 
   salir() {
@@ -113,7 +122,7 @@ export class AhorcadoComponent implements OnInit {
   }
 
   verificaFinal(){
-  if(this.palabraArmada == this.palabraMatriz[this.aleatorio])
+  if(this.contadorEsta == this.palabraMatriz[this.aleatorio].length)
     this.gano= true;
   }
 }

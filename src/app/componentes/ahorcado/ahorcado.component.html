@@ -16,7 +16,7 @@
         </div>
       </div>
       <div class="pedidas">
-        <input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra" />
+        <input type="text" max="1" (keyup)="validar()" [(ngModel)]="letra" [disabled]="this.contador==6 || gano"/>
       </div>
       <div class="norepita">
         {{ this.letrasElegidas }}

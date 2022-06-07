@@ -55,7 +55,7 @@ export class Usuario {
         var users = JSON.parse(localStorage.getItem('users'));
       }
     } else {
-      window.alert('else del if');
+      //window.alert('else del if');
     }
     //let encontrado = 0;
     for (let i in users) {
