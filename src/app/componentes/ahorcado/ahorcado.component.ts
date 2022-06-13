@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Jugadores } from 'src/app/clases/jugadores';
 
 @Component({
   selector: 'app-ahorcado',
@@ -22,6 +23,7 @@ export class AhorcadoComponent implements OnInit {
   contadorEsta:number;
   gano:boolean;
   palabraArmada:string;
+  jugadornuevo: Jugadores;
   
 
   constructor() {
@@ -58,6 +60,7 @@ export class AhorcadoComponent implements OnInit {
     this.contadorEsta=0;
     this.gano=false;
     this.palabraArmada='';
+    this.jugadornuevo = new Jugadores();
   }
 
   ngOnInit(): void {}
@@ -126,6 +129,22 @@ export class AhorcadoComponent implements OnInit {
 
   verificaFinal(){
   if(this.contadorEsta == this.palabraMatriz[this.aleatorio].length)
-    this.gano= true;
+    {
+      this.gano= true;
+      let dato: string;
+      //dato=this.jugadorActual.nombre;
+      dato = this.datosAPasarAhorcado.nombre;
+      this.jugadornuevo.setNombre(dato);
+      //dato=this.jugadornuevo.mail;
+      dato = this.datosAPasarAhorcado.mail;
+      this.jugadornuevo.setMail(dato);
+      this.jugadornuevo.juego = this.datosAPasarAhorcado.juego;
+      this.jugadornuevo.setNombrejuego('Ahorcado');
+      this.jugadornuevo.puntaje = 6 - this.contador;
+      var fecha = new Date();
+      this.jugadornuevo.fechaHora = fecha.toLocaleDateString();
+      this.jugadornuevo.guardaScore();   
+
   }
+}
 }
