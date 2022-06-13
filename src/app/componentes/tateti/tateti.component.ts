@@ -185,9 +185,11 @@ export class TatetiComponent implements OnInit {
     let primerParte: string;
     let segundaParte: string;
     let terceraParte: string;
+    let intermedia:string;
     cadena = this.analiza();
     primerParte = cadena.substring(0, 2);
     segundaParte = cadena.substring(1, 3);
+    intermedia = cadena[0] + cadena[2];
     if (vueltas == 3) {
       terceraParte = cadena.substring(2, 4);
     }
@@ -205,26 +207,34 @@ export class TatetiComponent implements OnInit {
       if (cuentaVueltas == 2) {
         cadenaCompara = terceraParte;
       }
+      if(cuentaVueltas == 3){
+        //window.alert('carga intermedia');
+        cadenaCompara = intermedia;
+      }
 
       for (let k = 0; k < 20; k++)
         if (jugadasTermino[k] == cadenaCompara) {
           posBusca = posicionar[k];
+          if (posBusca < 4) {
+            nuevaFil = 0;
+            nuevaCol = posBusca - 1;
+          } else if (posBusca < 7) {
+            nuevaFil = 1;
+            nuevaCol = posBusca - 4;
+          } else {
+            nuevaFil = 2;
+            nuevaCol = posBusca - 7;
+          }
+          if(this.buscaVacios(nuevaFil, nuevaCol)){
+            //window.alert('fil ' +nuevaFil+' col '+nuevaCol );
           break;
         }
-      if (posBusca < 4) {
-        nuevaFil = 0;
-        nuevaCol = posBusca - 1;
-      } else if (posBusca < 7) {
-        nuevaFil = 1;
-        nuevaCol = posBusca - 4;
-      } else {
-        nuevaFil = 2;
-        nuevaCol = posBusca - 7;
-      }
+        }
+      
       cuentaVueltas++;
-      if (cuentaVueltas == vueltas && !this.buscaVacios(nuevaFil, nuevaCol)) {
+      if (cuentaVueltas == vueltas+2 && !this.buscaVacios(nuevaFil, nuevaCol)) {
         salir = false;
-        //window.alert('entro aca '+ cadenaCompara + ' cadena '+cadena+' 1cad '+primerParte+ ' 2cad '+segundaParte+' 3cad'+terceraParte);
+        //window.alert('entro aca '+ cadenaCompara + ' cadena '+cadena+' 1cad '+primerParte+ ' 2cad '+segundaParte+' 3cad'+terceraParte+ ' inter '+intermedia);
         //primer vacio
         for (let i = 0; i < 2; i++)
           for (let j = 0; j < 2; j++)
