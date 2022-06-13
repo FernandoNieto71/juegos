@@ -69,7 +69,9 @@ export class AhorcadoComponent implements OnInit {
     if (this.palabraMatriz[this.aleatorio].includes(this.letra)) {
       for(var i=0;i<this.palabraMatriz[this.aleatorio].length;i++){
         if(this.palabraMatriz[this.aleatorio][i]==this.letra){
+          if(!this.letrasElegidas.includes(this.letra))
           this.contadorEsta++;
+          
         }
       }
       
@@ -115,6 +117,7 @@ export class AhorcadoComponent implements OnInit {
     this.letrasElegidas = '';
     this.contador=0;
     this.gano=false;
+    this.contadorEsta=0;
   }
 
   salir() {
