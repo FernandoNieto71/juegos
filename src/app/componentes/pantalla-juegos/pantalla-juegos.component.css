@@ -61,6 +61,13 @@
     size-adjust: 80%;
 }
 
+.btncinco{
+    background-image: url("/assets/mayormenor.png");
+    width: 320px;
+    height: 310px;
+    size-adjust: 80%;
+}
+
 
 
 .fondoJuegos{

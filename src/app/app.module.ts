@@ -17,6 +17,7 @@ import { HighscoresComponent } from './componentes/highscores/highscores.compone
 import { NavegadorComponent } from './componentes/navegador/navegador.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
+import { MayormenorComponent } from './componentes/mayormenor/mayormenor.component';
 //import { AdivinaComponent } from './componetes/adivina/adivina.component';
 //import { PersonalComponent } from './component/personal/personal.component';
 //import { FormsModule } from '@angular/forms';
@@ -37,6 +38,7 @@ import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
     HighscoresComponent,
     NavegadorComponent,
     AhorcadoComponent,
+    MayormenorComponent,
     //AdivinaComponent,
     //PersonalComponent
   ],

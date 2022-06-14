@@ -33,6 +33,9 @@
             <li class="grid-cuatro">
               <button class="btncuatro" (click)="selectojuego(4)">ahorcado</button>
             </li>
+            <li class="grid-cinco">
+              <button class="btncinco" (click)="selectojuego(5)">Mayor Menor</button>
+            </li>
           </div>
         </div>
       </div>
@@ -55,6 +58,9 @@
     </div>
     <div *ngIf="this.jugado == 4">
       <app-ahorcado [datosAPasarAhorcado]="valorAPasar"></app-ahorcado>
+    </div>
+    <div *ngIf="this.jugado == 5">
+      <app-mayormenor [datosAPasarMayorMenor]="valorAPasar"></app-mayormenor>
     </div>
   </div>
 </body>

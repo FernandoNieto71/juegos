@@ -6,6 +6,7 @@ import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.comp
 import { ErrorComponent } from './componentes/error/error.component';
 import { HighscoresComponent } from './componentes/highscores/highscores.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { MayormenorComponent } from './componentes/mayormenor/mayormenor.component';
 import { NavegadorComponent } from './componentes/navegador/navegador.component';
 import { PantallaJuegosComponent } from './componentes/pantalla-juegos/pantalla-juegos.component';
 import { PersonalComponent } from './componentes/personal/personal.component';
@@ -32,6 +33,7 @@ const routes: Routes = [
       { path: 'adivina', component: AdivinaComponent },
       { path: 'highscores', component: HighscoresComponent },
       { path: 'ahorcado', component: AhorcadoComponent },
+      { path: 'mayormenor', component:MayormenorComponent}
     ],
   },
   { path: '**', component: ErrorComponent },
