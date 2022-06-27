@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from 'src/app/clases/usuario';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pantalla-juegos',
@@ -10,10 +11,11 @@ export class PantallaJuegosComponent implements OnInit {
   jugadorActual: Usuario;
   jugado: number;
   valorAPasar: any;
+
   constructor() {
     this.jugadorActual = new Usuario();
     this.jugadorActual.traeUsuario();
-    //this.valorAPasar={nombre: this.jugadorActual.nombre, mail: this.jugadorActual.mail};
+    
   }
 
   ngOnInit(): void {}

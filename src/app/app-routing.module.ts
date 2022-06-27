@@ -13,6 +13,7 @@ import { PersonalComponent } from './componentes/personal/personal.component';
 import { PptComponent } from './componentes/ppt/ppt.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { TatetiComponent } from './componentes/tateti/tateti.component';
+import { UsuariologGuard } from './guardianes/usuariolog.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: '/bienvenidos', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   {
     path: 'juegos',
     component: PantallaJuegosComponent,
+    canActivate:[UsuariologGuard],
     children: [
       { path: 'tateti', component: TatetiComponent },
       { path: 'ppt', component: PptComponent },
