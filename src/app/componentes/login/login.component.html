@@ -69,7 +69,7 @@
         type="email"
         id="inputEmail"
         class="form-control"
-        placeholder="Email address"
+        placeholder="{{ this.textoUsuario }}"
         required
         autofocus
         [(ngModel)]="miUsuario.mail"
@@ -81,7 +81,7 @@
         type="password"
         id="inputPassword"
         class="form-control"
-        placeholder="Password"
+        placeholder="{{ this.textoClave }}"
         required
         autofocus
         [(ngModel)]="miUsuario.clave"
@@ -101,8 +101,14 @@
       >
         Ingresar
       </button>
+      <br />
+    <button class="btn btn-secondary" type="button" (click)="usuarioTest()">
+      Test
+    </button>
       <p class="mt-5 mb-3 text-muted">&copy; 2017-2021</p>
     </div>
+    
+
     <!--/div-->
     <div class="container" *ngIf="this.existe">
       <div class="row">
