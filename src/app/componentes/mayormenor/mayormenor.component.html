@@ -6,18 +6,29 @@
 <label>
   {{timerGame || 0}}s
 </label-->
-<label *ngIf="this.mostrarFinal">{{this.leyenda}}</label>
+<label *ngIf="this.mostrarFinal">{{ this.leyenda }}</label>
 
+<div class="contenedor">
+  <h1>¿Cuál es mayor? 🙌</h1>
+  <!--, {{datosAPasarMayorMenor.nombre}}-->
 
-<h1>¿Cuál es mayor?, {{datosAPasarMayorMenor.nombre}} 🙌</h1>
+  <button
+    (click)="isGreater(leftNumber, rightNumber)"
+    [disabled]="this.mostrarFinal"
+  >
+    {{ leftNumber }}
+  </button>
+  <button
+    (click)="isGreater(rightNumber, leftNumber)"
+    [disabled]="this.mostrarFinal"
+  >
+    {{ rightNumber }}
+  </button>
 
-<button (click)="isGreater(leftNumber, rightNumber)" [disabled]="this.mostrarFinal">{{leftNumber}}</button>
-<button (click)="isGreater(rightNumber, leftNumber)" [disabled]="this.mostrarFinal">{{rightNumber}}</button>
+  <h1>Score:</h1>
+  <h2>{{ score }}</h2>
 
-<h1>Score:</h1>
-<h2>{{score}}</h2>
-
-<div class="btn btn-secondary" *ngIf='showBtnStart'>
-  <button (click)="startGame()">Iniciar Juego</button>
+  <div class="btn btn-secondary" *ngIf="showBtnStart">
+    <button (click)="startGame()">Iniciar Juego</button>
+  </div>
 </div>
-

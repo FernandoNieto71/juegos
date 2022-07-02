@@ -1,8 +1,8 @@
 <p>ahorcado works!</p>
 <body>
-  <div class="contenedor" *ngIf="!salida">
+  <div class="contenedor" > <!--*ngIf="!salida"---->
     <div>
-      <h1>• Bienvenido {{datosAPasarAhorcado.nombre}} al AHORCADO • </h1>
+      <h1>• Bienvenido  al AHORCADO • </h1>
       <div class="row">
         <div class="letra">
           <div class="col-12">
@@ -21,19 +21,21 @@
       <div class="norepita">
         {{ this.letrasElegidas }}
       </div>
+      <br>
       <div id="volver" *ngIf="ocultaBoton">
         <div>
           <button type="button" class="btn btn-info" (click)="volverJuego()">
             Volver a jugar
           </button>
         </div>
-        <div id="inciobtn">
+        <!--div id="inciobtn">
           <button class="btn btn-primary" type="button" (click)="salir()">
             Salir
           </button>
-        </div>
+        </div-->
       </div>
     </div>
+    <br>
     <div>
       <li *ngIf="this.contador == 0">
         <img src="./assets/foto0.png" />

@@ -18,6 +18,8 @@ import { NavegadorComponent } from './componentes/navegador/navegador.component'
 import { HttpClientModule } from '@angular/common/http';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './componentes/mayormenor/mayormenor.component';
+import { SusbcripcionComponent } from './componentes/susbcripcion/susbcripcion.component';
+import { AltaSuscripcionComponent } from './componentes/alta-suscripcion/alta-suscripcion.component';
 //import { AdivinaComponent } from './componetes/adivina/adivina.component';
 //import { PersonalComponent } from './component/personal/personal.component';
 //import { FormsModule } from '@angular/forms';
@@ -39,6 +41,8 @@ import { MayormenorComponent } from './componentes/mayormenor/mayormenor.compone
     NavegadorComponent,
     AhorcadoComponent,
     MayormenorComponent,
+    SusbcripcionComponent,
+    AltaSuscripcionComponent,
     //AdivinaComponent,
     //PersonalComponent
   ],

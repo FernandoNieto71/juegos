@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
         if (users[i]['clave'] == this.miUsuario.clave) {
           //window.alert("Bienvenido " + users[i]["nombre"]);
           this.miUsuario.guardaJugador();
-          this.router.navigate(['juegos']);
+          this.router.navigate(['bienvenidos']);
 
           break;
         } else {

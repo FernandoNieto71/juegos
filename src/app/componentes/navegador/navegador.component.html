@@ -67,16 +67,18 @@
         </li>
         <li class="nav-item" *ngIf="miUsuario.verificaJugador()">
           <!--a class="nav-link" href="#">Link</a-->
-          <a class="nav-link" routerLink="/juegos">Juegos</a>
+          <a class="nav-link" routerLink="/suscripcion">Suscripcion</a>
         </li>
+        <!--li class="nav-item" *ngIf="miUsuario.verificaJugador()">
+          
+          <a class="nav-link" routerLink="/juegos">Juegos</a>
+        </li-->        
+        
         <li class="nav-item" *ngIf="miUsuario.verificaJugador()">
          
           <a class="nav-link" (click)="miUsuario.logoutUsuario()" routerLink="/bienvenidos">Log Out</a>
         </li>
-        <!--li>
-          
-          <a class="nav-link" routerLink="/juegos/ppt">Piedra-papel-tijera</a>
-        </li-->
+        
   
   
         
