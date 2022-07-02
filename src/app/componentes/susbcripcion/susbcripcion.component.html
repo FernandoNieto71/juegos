@@ -66,11 +66,51 @@
           <p>Realizar una suscripci&oacute;n</p>
         </div>
       </div>
-
-      <div class="container">
+      <div class="container radioespacio">
+        <div class="row">
+          <div class="row" >
+            <ng-container *ngIf="!this.packbusqueda; then ifBlock else elseBlock"></ng-container>
+            <ng-template #ifBlock>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="buscaPack(1)"
+              >
+                Buscar Pack 1
+              </button>
+              <button
+              class="btn btn-secondary"
+              type="button"
+              (click)="buscaPack(2)"
+            >
+              Buscar Pack 2
+            </button>
+            <button
+            class="btn btn-primary"
+            type="button"
+            (click)="buscaPack(3)"
+          >
+            Buscar Pack 3
+          </button>
+            </ng-template>
+            <ng-template #elseBlock>
+              <button
+                class="btn btn-primary"
+                type="button"
+                (click)="buscaUsuario()"
+              >
+                Buscar x Usuario
+              </button>
+            </ng-template>            
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="container" *ngIf="!this.packbusqueda">
         <!-- Example row of columns -->
         <div class="row">
           <div class="col-md-4">
+            <h3>Listado de suscripciones de {{ this.jugadorActual.nombre }}</h3>
             <table>
               <tr>
                 <th>Usuario</th>
@@ -90,24 +130,36 @@
                 </td>
                 <td *ngIf="elemento.mail == this.jugadorActual.mail">
                   <div *ngIf="elemento.tateti == 1">
-                    <button class="btn btn-primary" type="button" (click)="tateti()">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="tateti()"
+                    >
                       Tateti
-                    </button>                    
+                    </button>
                     <!--a class="nav-link" routerLink="../tateti">Tateti</a-->
                   </div>
                 </td>
                 <td *ngIf="elemento.mail == this.jugadorActual.mail">
                   <div *ngIf="elemento.ppt == 1">
-                    <button class="btn btn-primary" type="button" (click)="ppt()">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="ppt()"
+                    >
                       Piedra Papel o Tijera
-                    </button>                    
+                    </button>
                     <!--a class="nav-link" routerLink="/ppt"
                       >Piedra-papel-tijera</a-->
-                    </div>
+                  </div>
                 </td>
                 <td *ngIf="elemento.mail == this.jugadorActual.mail">
                   <div *ngIf="elemento.adivina == 1">
-                    <button class="btn btn-primary" type="button" (click)="adivina()">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="adivina()"
+                    >
                       Adivina
                     </button>
                     <!--a class="nav-link" routerLink="/adivina">Adivina</a-->
@@ -115,18 +167,118 @@
                 </td>
                 <td *ngIf="elemento.mail == this.jugadorActual.mail">
                   <div *ngIf="elemento.ahorcado == 1">
-                    <button class="btn btn-primary" type="button" (click)="ahorcado()">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="ahorcado()"
+                    >
                       Ahorcado
-                    </button>                    
-                  <!--a class="nav-link" routerLink="/ahorcado">Ahorcado</a-->
+                    </button>
+                    <!--a class="nav-link" routerLink="/ahorcado">Ahorcado</a-->
                   </div>
                 </td>
                 <td *ngIf="elemento.mail == this.jugadorActual.mail">
                   <div *ngIf="elemento.mayorMenor == 1">
-                    <button class="btn btn-primary" type="button" (click)="mayMenor()">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="mayMenor()"
+                    >
                       Mayor Menor
-                    </button>                    
-                  <!--a class="nav-link" routerLink="/mayormenor">Mayor o Menor</a-->
+                    </button>
+                    <!--a class="nav-link" routerLink="/mayormenor">Mayor o Menor</a-->
+                  </div>
+                </td>
+              </tr>
+            </table>
+
+            <br />
+          </div>
+        </div>
+
+        <hr />
+      </div>
+      <div class="container" *ngIf="this.packbusqueda">
+        <!-- Example row of columns -->
+        <div class="row">
+          <div class="col-md-4">
+            <h3>Listado de suscripciones de {{ this.jugadorActual.nombre }} por Pack {{this.tipoBusqueda}}</h3>
+            <table>
+              <tr>
+                <th>Usuario</th>
+                <th>Pack</th>
+                <th>Tateti</th>
+                <th>PPT</th>
+                <th>Adivina</th>
+                <th>Ahorcado</th>
+                <th>Mayor Menor</th>
+              </tr>
+              <tr *ngFor="let elemento of this.listaSuscripciones">
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == this.tipoBusqueda">
+                  {{ elemento.mail }}
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  {{ elemento.pack }}
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  <div *ngIf="elemento.tateti == 1">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="tateti()"
+                    >
+                      Tateti
+                    </button>
+                    <!--a class="nav-link" routerLink="../tateti">Tateti</a-->
+                  </div>
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  <div *ngIf="elemento.ppt == 1">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="ppt()"
+                    >
+                      Piedra Papel o Tijera
+                    </button>
+                    <!--a class="nav-link" routerLink="/ppt"
+                      >Piedra-papel-tijera</a-->
+                  </div>
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  <div *ngIf="elemento.adivina == 1">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="adivina()"
+                    >
+                      Adivina
+                    </button>
+                    <!--a class="nav-link" routerLink="/adivina">Adivina</a-->
+                  </div>
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  <div *ngIf="elemento.ahorcado == 1">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="ahorcado()"
+                    >
+                      Ahorcado
+                    </button>
+                    <!--a class="nav-link" routerLink="/ahorcado">Ahorcado</a-->
+                  </div>
+                </td>
+                <td *ngIf="elemento.mail == this.jugadorActual.mail && elemento.pack == tipoBusqueda">
+                  <div *ngIf="elemento.mayorMenor == 1">
+                    <button
+                      class="btn btn-primary"
+                      type="button"
+                      (click)="mayMenor()"
+                    >
+                      Mayor Menor
+                    </button>
+                    <!--a class="nav-link" routerLink="/mayormenor">Mayor o Menor</a-->
                   </div>
                 </td>
               </tr>
