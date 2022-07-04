@@ -4,8 +4,10 @@ import { AdivinaComponent } from './componentes/adivina/adivina.component';
 import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { AltaSuscripcionComponent } from './componentes/alta-suscripcion/alta-suscripcion.component';
 import { BienvenidosComponent } from './componentes/bienvenidos/bienvenidos.component';
+import { ErrorSuscripcionComponent } from './componentes/error-suscripcion/error-suscripcion.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { HighscoresComponent } from './componentes/highscores/highscores.component';
+import { ListaSuscripcionComponent } from './componentes/lista-suscripcion/lista-suscripcion.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { MayormenorComponent } from './componentes/mayormenor/mayormenor.component';
 import { NavegadorComponent } from './componentes/navegador/navegador.component';
@@ -51,6 +53,8 @@ const routes: Routes = [
   { path: 'highscores', component: HighscoresComponent },
   { path: 'ahorcado', component: AhorcadoComponent,canActivate:[GuardianPack3Guard] },
   { path: 'mayormenor', component:MayormenorComponent, canActivate:[GuardianPack1Guard]},
+  {path: 'errorsuscripcion', component:ErrorSuscripcionComponent},
+  {path: 'listasuscripcion', component:ListaSuscripcionComponent},
   { path: '**', component: ErrorComponent },
 ];
 

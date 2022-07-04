@@ -16,7 +16,7 @@ export class GuardianPack3Guard implements CanActivate {
       if(this.servicio.accesoP3){
         return true;
       } else {
-        this.miRouter.navigate(["error"]);
+        this.miRouter.navigate(["errorsuscripcion"]);
         return false;
         
       }

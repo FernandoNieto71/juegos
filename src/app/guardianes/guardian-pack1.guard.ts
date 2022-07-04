@@ -16,7 +16,7 @@ export class GuardianPack1Guard implements CanActivate {
     if(this.servicio.accesoP1){
       return true;
     } else {
-      this.miRouter.navigate(["error"]);
+      this.miRouter.navigate(["errorsuscripcion"]);
       return false;
       
     }

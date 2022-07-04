@@ -20,6 +20,8 @@ import { AhorcadoComponent } from './componentes/ahorcado/ahorcado.component';
 import { MayormenorComponent } from './componentes/mayormenor/mayormenor.component';
 import { SusbcripcionComponent } from './componentes/susbcripcion/susbcripcion.component';
 import { AltaSuscripcionComponent } from './componentes/alta-suscripcion/alta-suscripcion.component';
+import { ListaSuscripcionComponent } from './componentes/lista-suscripcion/lista-suscripcion.component';
+import { ErrorSuscripcionComponent } from './componentes/error-suscripcion/error-suscripcion.component';
 //import { AdivinaComponent } from './componetes/adivina/adivina.component';
 //import { PersonalComponent } from './component/personal/personal.component';
 //import { FormsModule } from '@angular/forms';
@@ -43,6 +45,8 @@ import { AltaSuscripcionComponent } from './componentes/alta-suscripcion/alta-su
     MayormenorComponent,
     SusbcripcionComponent,
     AltaSuscripcionComponent,
+    ListaSuscripcionComponent,
+    ErrorSuscripcionComponent,
     //AdivinaComponent,
     //PersonalComponent
   ],
